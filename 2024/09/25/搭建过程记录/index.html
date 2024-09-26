@@ -13,13 +13,13 @@
 <meta property="og:site_name" content="xmy">
 <meta property="og:description" content="hexo官方文档 以下是自己的搭建过程： 1. 建立名为 username.github.io的储存库2. first commit123456789(base) xmy@xmy-Z790M-AORUS-ELITE-AX:~$ mkdir blog(base) xmy@xmy-Z790M-AORUS-ELITE-AX:~$ cd blog(base) xmy@xmy-Z790M-AORUS-ELI">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://xmy1107.github.io/home/xmy/.config/Typora/typora-user-images/image-20240925132827002.png">
-<meta property="og:image" content="https://xmy1107.github.io/home/xmy/.config/Typora/typora-user-images/image-20240925134647445.png">
+<meta property="og:image" content="https://xmy1107.github.io/home/xmy/blog/source/pictures/image-20240925132827002.png">
+<meta property="og:image" content="https://xmy1107.github.io/home/xmy/blog/source/pictures/image-20240925134647445.png">
 <meta property="article:published_time" content="2024-09-25T07:38:51.661Z">
-<meta property="article:modified_time" content="2024-09-25T16:44:45.932Z">
+<meta property="article:modified_time" content="2024-09-26T16:02:51.735Z">
 <meta property="article:author" content="Mingyang Xu">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://xmy1107.github.io/home/xmy/.config/Typora/typora-user-images/image-20240925132827002.png">
+<meta name="twitter:image" content="https://xmy1107.github.io/home/xmy/blog/source/pictures/image-20240925132827002.png">
     
     
       
@@ -58,10 +58,10 @@
     
 	<!-- mathjax -->
 	
-<meta name="generator" content="Hexo 7.3.0"></head>
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="xmy" type="application/atom+xml">
+</head>
 
-<body class="max-width mx-auto px3 ltr">
-    
+<body class="max-width mx-auto px3 ltr">    
       <div id="header-post">
   <a id="menu-icon" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fa-solid fa-bars fa-lg"></i></a>
@@ -164,7 +164,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">(base) xmy@xmy-Z790M-AORUS-ELITE-AX:~/blog$ git remote get-url origin</span><br><span class="line">https://github.com/xmy1107/xmy1107.github.io.git</span><br><span class="line">(base) xmy@xmy-Z790M-AORUS-ELITE-AX:~/blog$ git remote set-url origin git@github.com:xmy1107/xmy1107.github.io.git</span><br><span class="line">(base) xmy@xmy-Z790M-AORUS-ELITE-AX:~/blog$ git remote get-url origin</span><br><span class="line">git@github.com:xmy1107/xmy1107.github.io.git</span><br><span class="line">(base) xmy@xmy-Z790M-AORUS-ELITE-AX:~/blog$ git push -u origin main</span><br><span class="line">枚举对象中: 3, 完成.</span><br><span class="line">对象计数中: 100% (3/3), 完成.</span><br><span class="line">写入对象中: 100% (3/3), 227 字节 | 227.00 KiB/s, 完成.</span><br><span class="line">总共 3（差异 0），复用 0（差异 0），包复用 0</span><br><span class="line">To github.com:xmy1107/xmy1107.github.io.git</span><br><span class="line"> * [new branch]      main -&gt; main</span><br><span class="line">分支 <span class="string">&#x27;main&#x27;</span> 设置为跟踪 <span class="string">&#x27;origin/main&#x27;</span>。</span><br></pre></td></tr></table></figure>
 
 <p>然后在**<a href="https://xmy1107.github.io/**%E4%B8%8B%E5%B0%B1%E6%9C%89%E4%B8%80%E4%B8%AA%E7%A9%BA%E7%9A%84%E7%BD%91%E9%A1%B5%EF%BC%9A">https://xmy1107.github.io/**下就有一个空的网页：</a></p>
-<p><img src="/home/xmy/.config/Typora/typora-user-images/image-20240925132827002.png" alt="image-20240925132827002"></p>
+<p><img src="/home/xmy/blog/source/pictures/image-20240925132827002.png" alt="image-20240925132827002"></p>
 <p>ps：PAT想要不每次输密码可以尝试</p>
 <p><code>vim ~/.gitconfig</code>后输入以下内容（虽然我没成功）</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[init]</span><br><span class="line">        defaultBranch = main</span><br><span class="line">[user]</span><br><span class="line">        name = </span><br><span class="line">        email = </span><br><span class="line">[github]</span><br><span class="line">        token = </span><br></pre></td></tr></table></figure>
@@ -184,7 +184,7 @@
 
 <p>这个过程相当于<code>hexo generate</code>和<code>hexo deploy</code>，区别是在<code>git push</code>时才执行，然后用github工作流完成渲染和部署。</p>
 <p>这一步结束后重新打开**<a href="https://xmy1107.github.io/**%E4%BE%BF%E6%98%AF%E5%A6%82%E4%B8%8B%E9%A1%B5%E9%9D%A2%EF%BC%9A">https://xmy1107.github.io/**便是如下页面：</a></p>
-<p><img src="/home/xmy/.config/Typora/typora-user-images/image-20240925134647445.png" alt="image-20240925134647445"></p>
+<p><img src="/home/xmy/blog/source/pictures/image-20240925134647445.png" alt="image-20240925134647445"></p>
 <h3 id="4-项目页面（这部分没完全搞清楚）"><a href="#4-项目页面（这部分没完全搞清楚）" class="headerlink" title="4.项目页面（这部分没完全搞清楚）"></a>4.项目页面（这部分没完全搞清楚）</h3><ol>
 <li>导航到 GitHub 上的存储库。 转到 <strong>Settings</strong> 选项卡。 建立名为 <code>&lt;repository 的名字&gt;</code> 的储存库，这样你的博客网址为 <code>&lt;你的 GitHub 用户名&gt;.github.io/&lt;repository 的名字&gt;</code>，repository 的名字可以任意，例如 blog 或 hexo。</li>
 <li>编辑你的 <code>_config.yml</code>，将 <code>url:</code> 更改为 <code>&lt;你的 GitHub 用户名&gt;.github.io/&lt;repository 的名字&gt;</code>。</li>
@@ -347,5 +347,20 @@
 
 <!-- utterances Comments -->
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
