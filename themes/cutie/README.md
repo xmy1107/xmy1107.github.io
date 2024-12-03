@@ -1,0 +1,1 @@
+See [User Guide](https://qutang.github.io/2018/02/12/hexo-theme-cutie-v2-tutorial/) for installation and usage.

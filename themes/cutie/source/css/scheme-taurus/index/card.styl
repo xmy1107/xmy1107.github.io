@@ -1,0 +1,130 @@
+.Card
+  font-size:14px
+  text-align: left
+  width: 45%
+  +for_breakpoint(tablet)
+    width: 90%
+  +for_breakpoint(mobile)
+    width: 90%
+  display: flex
+  align-items: flex-start
+  background-color: white
+  border-radius: 5px
+  box-shadow: 0.5px 0.5px 3px -0.5px rgba(170, 175, 173, 0.61)
+  margin: 0.5em 0
+  min-height: 16em
+  padding: 0 2%
+  position: relative
+  .Card-body
+    a
+      text-decoration: none
+      color: #444
+    flex: 1
+    flex-direction: column
+    display: flex
+    align-items: flex-start
+    justify-content: flex-start
+    margin: 0 0.5em 0.5em 0.5em
+    .Card-title
+      display: block
+      margin-top: 1.5em
+      margin-bottom: 1.5em
+      flex-grow: 1
+      h2 
+        margin: 0
+        font-size: 1.4em
+        font-weight: normal
+
+    .Card-excerpt
+      display: none
+      p
+        margin: 0
+        line-height: 1.5
+        font-size: 1.1em
+      margin-top: 1.5em
+      flex-grow: 1
+      text-align: left
+      justify-content: center
+      flex: 1
+      margin-right: 1em
+    .Card-excerpt-touch
+      p
+        margin: 0
+        line-height: 1.5
+      margin-top: 0em
+      margin-bottom: 7em
+      flex-grow: 1
+      text-align: left
+      justify-content: center
+      flex: 1
+      margin-right: 1em
+	    display: block
+    .Card-meta
+      .Card-tags
+        margin-right: 0.5em
+        +for_breakpoint(mobile)
+          margin-right: 1em
+        display: block
+      position: absolute
+      bottom: 1em
+      display:block
+      font-size: 0.8em
+      color: #aaa
+    
+  .Card-figure
+    margin: 1.5em 1.5em 1.5em 0.5em
+    +for_breakpoint(mobile)
+      margin-left: 1em
+    +for_breakpoint(tablet)
+      margin-left: 1em
+    img
+      width: 2.8em
+      height: 2.8em
+      object-fit: cover
+  
+ 
+.Card-badge
+  -webkit-border-radius: 50%
+  -moz-border-radius: 50%
+  border-radius: 50%   
+  border: 0px solid #FFF
+  width: 10px
+  height: 10px  
+  background-color: #FF6B6B
+  position:absolute
+  top:-5px
+  right:-5px
+
+.Card-hover:hover 
+  .Card-title
+    display: none
+  .Card-excerpt
+    display: block
+
+.Card-meta
+  .card-calendar
+    a
+      &:link
+      &:visited
+        color: #759792
+      &:hover
+        color: lighten(#759792, 20%)
+  .card-comment
+    a
+      &:link
+      &:visited
+        color: #aaa
+      &:hover
+        color: lighten(#f8a800, 20%)
+  .card-visitor
+    color: #aaa
+  .card-thumbup-container
+    color: #aaa
+  ul
+    padding: 0
+    display: block
+    margin-left: 0.3em
+    font-size: 1.1em
+  li
+    display: inline-block
+    margin: 0 1em 0 0

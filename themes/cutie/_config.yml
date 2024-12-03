@@ -1,0 +1,185 @@
+version: 2.1.4
+url: https://hexo-theme-cutie.qutang.dev
+logo: /images/logo.svg
+slogan: Bazinga, theme cutie!
+
+global:
+  comment_system: valine # disqus, valine, gitment
+  scheme: 
+    name: Taurus #Taurus
+    color: flower
+  icon_set: blue-shadow
+  use_animation: true
+
+page_404:
+  tencent_404: false
+
+post:
+  allow_share: true
+  allow_modification: false
+  allow_commercial: false
+  use_lightgallery: true
+  allow_comment: true
+  toc_level: 2
+  enable_unread_badge: false
+
+changelog:
+  v2.1.4:
+    - New logo
+    - Fix favicon configuration bug
+    - Use local file for leancloud SDK
+  v2.1.3:
+    - Fix <a href='https://github.com/qutang/hexo-theme-cutie/issues/95' target='_blank'>#95</a>.
+    - Minor adjust the appearance of archive pages.
+  v2.1.2:
+    - Minor adjust the colors of meta icons.
+  v2.1.1:
+    - Close 页面显示issue <a href='https://github.com/qutang/hexo-theme-cutie/issues/92' target='_blank'>#92</a>.
+    - Replace IP detector library.
+  v2.1.0:
+    - Add Thumb Up functionality. Refer to <a href='https://github.com/qutang/hexo-theme-cutie/issues/89' target='_blank'>#89</a>.
+  v2.0.17:
+    - Remove unused scheme (Close <a href='https://github.com/qutang/hexo-theme-cutie/issues/81' target='_blank'>#81</a>)
+    - Remove check new version functionality (not reliable)
+    - Adjust header appearance
+    - Adjust mobile view Refer to <a href='https://github.com/qutang/hexo-theme-cutie/issues/61' target='_blank'>#61</a>.
+  v2.0.16:
+    - Use jdenticon when post icon is unavailable.
+  v2.0.15:
+    - Bug fix of searching result links. Refer to <a href='https://github.com/qutang/hexo-theme-cutie/issues/85' target='_blank'>#85</a>.
+  v2.0.14:
+    - Bug fix during indexing search content. Refer to <a href='https://github.com/qutang/hexo-theme-cutie/issues/84' target='_blank'>#84</a>.
+  v2.0.13:
+    - Bug fix when displaying month name in the archive page <a href='https://github.com/qutang/hexo-theme-cutie/issues/66' target='_blank'>#66</a>. Thanks to <a href='https://github.com/imjdl' target='_blank'>@imjdl</a>.
+  v2.0.12:
+    - Linkify meta icons on cards
+    - Minor appearance tweak
+    - Fix a bug in displaying unread badge
+  v2.0.11:
+    - Better support for post excerpt
+    - Support <a href='http://livere.com' target='_blank'>livere</a> comment system
+  v2.0.10:
+    - Import bug fix when parsing theme configuration (recommend to update)
+    - Polish search page
+    - Add Italian translation (contributed by <a href='https://github.com/Fastbyte01' target='_blank'>@fastbyte01</a>)
+  v2.0.9:
+    - Change primary font to Segoe UI
+    - Optimize animation
+    - Adjust appearance
+    - Bug fix
+  v2.0.8:
+    - Bug fixes
+    - Announcement will only be shown when visitor first sees it
+    - Automate unread badge and post version management. No need to manually update <code>version</code> variable, set variable <code>enable_unread_badge</code> to <code>true</code> or <code>false</code> instead.
+    - Optimize post visit and comment counts (reduce network requests)
+  v2.0.7:
+    - Auto hide/show of header and fotter during scrolling
+    - Redesign of announcement, supporting both post annoucement and site announcement
+    - No need to add search page yourself
+    - No need to add 404 page yourself
+    - Add support to use tencent 404 charity page
+    - Change search from Google to in-site search
+  v2.0.6-beta:
+    - Bug fixes
+  v2.0.5-beta:
+    - Support animation
+    - Support post copyright
+    - Support light gallery zooming
+    - Support post comment and visit counting
+    - Support light gallery for all images in a post
+    - Group posts by month adaptively in archive page
+
+libs:
+  noty:
+    name: noty.js notification library
+    url: https://ned.im/noty/
+    css: /libs/noty/lib/noty.css
+    js_min: /libs/noty/lib/noty.min.js
+    js: /libs/noty/lib/noty.js
+  tippy:
+    name: tippy.js tooltip library
+    url: https://atomiks.github.io/tippyjs/
+    js: /libs/tippy.js/dist/tippy.all.js
+    js_min: /libs/tippy.js/dist/tippy.all.min.js
+  headroom:
+    name: headroom.js
+    url: http://wicky.nillia.ms/headroom.js/
+    js: /libs/headroom.js/dist/headroom.js
+    js_min: /libs/headroom.js/dist/headroom.min.js
+  lightgallery:
+    name: lightgallery.js
+    url: https://sachinchoolur.github.io/lightgallery.js/
+    js: /libs/lightgallery.js/dist/js/lightgallery.js
+    js_min: /libs/lightgallery.js/dist/js/lightgallery.min.js
+    css: /libs/lightgallery.js/dist/css/lightgallery.css
+    css_min: /libs/lightgallery.js/dist/css/lightgallery.min.css
+  lgzoom:
+    name: lightgallery.js zoom plugin
+    url: https://sachinchoolur.github.io/lightgallery.js/
+    js: /libs/lg-zoom/dist/lg-zoom.js
+    js_min: /libs/lg-zoom/dist/lg-zoom.min.js
+  jquery:
+    name: jQuery library
+    url: https://jquery.com/
+    js: /libs/jquery/dist/jquery.js
+    js_min: /libs/jquery/dist/jquery.min.js
+  gitment:
+    name: gitment comment system
+    url: https://github.com/imsun/gitment
+    js: /libs/gitment/dist/gitment.browser.js
+    js_min: /libs/gitment/dist/gitment.browser.js
+    css: /libs/gitment/style/default.css
+  valine:
+    name: valine comment system
+    url: https://valine.js.org/
+    js_cdn: //unpkg.com/valine/dist/Valine.min.js
+  leancloud:
+    name: leancloud BAAS
+    url: https://leancloud.cn/
+    js_cdn: /js/av-min.js
+  mathjax:
+    name: mathjax library
+    url: https://www.mathjax.org/
+    js_cdn: https://cdnjs.cloudflare.com/ajax//libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML
+  jscookie:
+    name: "js-cookie.js: A javascript cookie manipulation library"
+    url: https://github.com/js-cookie/js-cookie
+    js_cdn: https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js
+    js: /libs/js-cookie/src/js.cookie.js
+  fontawesome:
+    name: fontawesome
+    url: https://fontawesome.com/
+    js_cdn: https://use.fontawesome.com/releases/v5.0.6/js/all.js
+    css: https://use.fontawesome.com/releases/v5.2.0/css/all.css
+  fuse:
+    name: "fuse.js: A javascript fuzzy search library"
+    url: http://fusejs.io/
+    js_min: /libs/fuse.js/dist/fuse.min.js
+    js: /libs/fuse.js/dist/fuse.js
+  jshashes:
+    name: "hashes.js: A javascript hashing library"
+    url: https://github.com/h2non/jshashes
+    js_min: /libs/jshashes/hashes.min.js
+    js: /libs/jshashes/hashes.js
+  loadjs:
+    name: "loadjs.js: A javascript dependency management library"
+    url: https://github.com/muicss/loadjs
+    js_min: /libs/loadjs/dist/loadjs.min.js
+    js: /libs/loadjs/dist/loadjs.js
+  animate:
+    name: "animate.css: A CSS framework for predefined animations"
+    url: https://github.com/daneden/animate.css
+    css_min: /libs/animate.css/animate.min.css
+    css: /libs/animate.css/animate.css
+  striptags:
+    name: striptags
+    url: https://www.npmjs.com/package/striptags
+    js: /libs/striptags/src/striptags.js
+  jdenticon:
+    name: "Jdenticon: Open source library for generating identicons"
+    url: https://jdenticon.com
+    js_min: /libs/jdenticon/dist/jdenticon.min.js
+    js: /libs/jdenticon/dist/jdenicon.js
+  
+  
+  
