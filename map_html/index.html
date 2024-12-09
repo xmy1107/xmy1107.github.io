@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+	<title>MeshLine 线</title>
+	<style>
+		html, body, #container {
+			margin: 0; padding: 0; width: 100%; height: 100%;
+		}
+
+		.inputs {
+			position: absolute;
+			bottom: 20px;
+			right: 40px;
+		}
+	</style>
+</head>
+<body>
+<div id="container"></div>
+<div class="inputs">
+	<label>宽度
+		<input type="text" placeholder="请输入meshline的宽度" value="20" id="widthInput">
+	</label>
+
+	<label>高度
+		<input type="text" placeholder="请输入meshline的高度" value="2000000" id="heightInput">
+	</label>
+	<button onclick="update()">更新</button>
+</div>
+<script src="https://webapi.amap.com/maps?v=1.4.15&key=50411932a87f805e7afa09dcb04826fb&plugin=Map3D"></script>
+<script>
+	// var map = new AMap.Map('container', {
+	//     center: [108.011931, 37.071694],
+	//     zoom: 6,
+	//     viewMode: '3D',
+	//     pitch: 60
+	// });
+	// 定义地图
+	const map = new AMap.Map('container', {
+		center: [120.15507, 30.274084], // 杭州中心
+		zoom: 6,
+		viewMode: '3D',
+		pitch: 60
+	});
+
+	// 定义杭州的经纬度
+	const hangzhou = new AMap.LngLat(120.15507, 30.274084); // 杭州
+
+	// 定义其他城市的经纬度
+	const harbin = new AMap.LngLat(126.642464, 45.756967); // 哈尔滨
+	const hefei = new AMap.LngLat(117.227239, 31.820587); // 合肥
+	const zhejiang = new AMap.LngLat(120.15507, 30.274084); // 浙江（杭州）
+	const zhengzhou = new AMap.LngLat(113.665412, 34.757975); // 河南省郑州
+	const jinan = new AMap.LngLat(117.000923, 36.675807); // 山东省济南
+	const nanjing = new AMap.LngLat(118.796877, 32.060255); // 江苏省南京
+	const chongqing = new AMap.LngLat(106.504962, 29.533155); // 重庆
+	const shanghai = new AMap.LngLat(121.473701, 31.230416); // 上海
+	const beijing = new AMap.LngLat(116.407396, 39.904200); // 北京
+	const xian = new AMap.LngLat(108.940175, 34.341568); // 西安
+
+
+	// 绘制杭州到各个城市的路线并添加文字标注
+
+	// // 杭州到哈尔滨
+	// drawLine([hangzhou, harbin]);
+	// addTextToLine(map, [hangzhou, harbin], "CCPC2023哈尔滨金牌");
+	// addTextToLine(map, [hangzhou, harbin], "CCPC2024哈尔滨银牌");
+
+	// // 杭州到合肥
+	// drawLine([hangzhou, hefei]);
+	// addTextToLine(map, [hangzhou, hefei], "ICPC2023合肥银牌");
+
+	// // 杭州到河南（郑州）
+	// drawLine([hangzhou, zhengzhou]);
+	// addTextToLine(map, [hangzhou, zhengzhou], "河南省赛2024第六名");
+
+	// // 杭州到山东（济南）
+	// drawLine([hangzhou, jinan]);
+	// addTextToLine(map, [hangzhou, jinan], "山东省赛2024季军");
+
+	// // 杭州到江苏（南京）
+	// drawLine([hangzhou, nanjing]);
+	// addTextToLine(map, [hangzhou, nanjing], "ICPC2024南京金牌");
+	// addTextToLine(map, [hangzhou, nanjing], "江苏省赛2023银奖");
+
+	// // 杭州到重庆
+	// drawLine([hangzhou, chongqing]);
+	// addTextToLine(map, [hangzhou, chongqing], "CCPC2024重庆季军");
+
+	// // 杭州到上海
+	// drawLine([hangzhou, shanghai]);
+	// addTextToLine(map, [hangzhou, shanghai], "ICPC2024上海银牌");
+
+	// // 杭州到北京
+	// drawLine([hangzhou, beijing]);
+	// addTextToLine(map, [hangzhou, beijing], "北京市赛2024银奖");
+
+	// // 杭州到西安
+	// drawLine([hangzhou, xian]);
+	// addTextToLine(map, [hangzhou, xian], "ec-final2024西安");
+
+	// 杭州到哈尔滨
+	drawLine([hangzhou, harbin]);
+	addTextToLocation(map, harbin, "CCPC2023哈尔滨金牌");
+	addTextToLocation(map, harbin, "CCPC2024哈尔滨银牌");
+
+	// 杭州到合肥
+	drawLine([hangzhou, hefei]);
+	addTextToLocation(map, hefei, "ICPC2023合肥银牌");
+
+	// 杭州到河南（郑州）
+	drawLine([hangzhou, zhengzhou]);
+	addTextToLocation(map, zhengzhou, "河南省赛2024第六名");
+
+	// 杭州到山东（济南）
+	drawLine([hangzhou, jinan]);
+	addTextToLocation(map, jinan, "山东省赛2024季军");
+
+	// 杭州到江苏（南京）
+	drawLine([hangzhou, nanjing]);
+	addTextToLocation(map, nanjing, "ICPC2024南京金牌");
+	addTextToLocation(map, nanjing, "江苏省赛2023银奖");
+
+	// 杭州到重庆
+	drawLine([hangzhou, chongqing]);
+	addTextToLocation(map, chongqing, "CCPC2024重庆季军");
+
+	// 杭州到上海
+	drawLine([hangzhou, shanghai]);
+	addTextToLocation(map, shanghai, "ICPC2024上海银牌");
+
+	// 杭州到北京
+	drawLine([hangzhou, beijing]);
+	addTextToLocation(map, beijing, "北京市赛2024银奖");
+
+	// 杭州到西安
+	drawLine([hangzhou, xian]);
+	addTextToLocation(map, xian, "ec-final2024西安");
+
+
+	function addTextToLocation(map, position, text) {
+		// 创建文字标注
+		const textMarker = new AMap.Text({
+			text: text, // 显示的文本内容
+			anchor: 'center', // 文本位置基于中心点
+			draggable: true, // 是否可拖动
+			style: {
+				color: '#333',
+				fontSize: '14px',
+				background: 'rgba(255, 255, 255, 0.8)',
+				border: '1px solid #ccc',
+				borderRadius: '4px',
+				padding: '2px'
+			},
+			position: position, // 设置文字标注位置
+			map: map // 添加到地图
+		});
+
+		return textMarker;
+	}
+
+	function addTextToLine(map, points, text) {
+		// 计算中间点（可调整为曲线某个比例位置）
+		const startPoint = points[0]; // 起点
+		const endPoint = points[points.length - 1]; // 终点
+
+		// 计算经度和纬度的中点
+		const midLng = (startPoint.lng + endPoint.lng) / 2; // 经度中点
+		const midLat = (startPoint.lat + endPoint.lat) / 2; // 纬度中点
+
+		// 创建中点 LngLat 对象
+		const midPoint = new AMap.LngLat(midLng, midLat);
+
+		// console.log(midPoint); // 输出中点坐标
+
+
+		// 添加文字标注
+		const textMarker = new AMap.Text({
+			text: text, // 显示的文本内容
+			anchor: 'center', // 文字位置基于中心点
+			draggable: true, // 是否可拖动
+			style: {
+				color: '#333', // 文字颜色
+				fontSize: '14px',
+				background: 'rgba(255, 255, 255, 0.8)',
+				border: '1px solid #ccc',
+				borderRadius: '4px',
+				padding: '2px'
+			},
+			position: midPoint, // 设置位置
+			map: map // 添加到地图
+		});
+
+		return textMarker;
+	}
+
+
+	function drawLine(points) {
+		var object3Dlayer = new AMap.Object3DLayer();
+		var numberOfPoints = 180;
+		var minHeight = 20;
+
+		var meshLine = new AMap.Object3D.MeshLine({
+			path: computeBezier(points, numberOfPoints, minHeight),
+			height: getEllipseHeight(numberOfPoints, 2000000, minHeight),
+			color: 'rgba(55,129,240, 0.9)',
+			width: 10
+		});
+
+		meshLine.transparent = true;
+		object3Dlayer.add(meshLine);
+		meshLine['backOrFront'] = 'both';
+		map.add(object3Dlayer);
+	}
+
+	function pointOnBezier(cp, t) {
+		// cp 是控制点数组，t 是参数 (0 <= t <= 1)
+		if (cp.length === 1) {
+			// 当控制点只有一个时，返回当前点
+			return cp[0];
+		}
+
+		var nextControlPoints = [];
+		for (var i = 0; i < cp.length - 1; i++) {
+			// 计算相邻控制点的线性插值
+			var lng = (1 - t) * cp[i].lng + t * cp[i + 1].lng;
+			var lat = (1 - t) * cp[i].lat + t * cp[i + 1].lat;
+			nextControlPoints.push(new AMap.LngLat(lng, lat));
+		}
+
+		// 递归处理下一层的控制点
+		return pointOnBezier(nextControlPoints, t);
+	}
+
+	function computeBezier(points, numberOfPoints) {
+		var dt = 1.0 / (numberOfPoints - 1);
+		var curve = [];
+
+		for (var i = 0; i < numberOfPoints; i++) {
+			// 递归计算贝塞尔曲线上的点
+			curve.push(pointOnBezier(points, i * dt));
+		}
+
+		return curve;
+	}
+
+	function getEllipseHeight(count, maxHeight, minHeight) {
+		var height = [];
+		var radionUnit = Math.PI / 180;
+
+		for (var i = 0; i < count; i++) {
+			var radion = i * radionUnit;
+
+			height.push(minHeight + Math.sin(radion) * maxHeight);
+		}
+
+		return height;
+	}
+
+	function update() {
+		var width = +document.querySelector('#widthInput').value;
+		var maxHeight = +document.querySelector('#heightInput').value;
+
+		if (width > 0) {
+			meshLine.setWidth(width);
+		} else {
+			document.querySelector('#widthInput').value = 20;
+		}
+
+		if (maxHeight >= 1000) {
+			meshLine.setHeight(getEllipseHeight(numberOfPoints, maxHeight, minHeight));
+		} else {
+			document.querySelector('#heightInput').value = 2000000;
+		}
+	}
+</script>
+</body>
+</html>
