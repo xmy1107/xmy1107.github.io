@@ -1,4 +1,21 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="icon" href="/favicon.ico"><script type="module" crossorigin src="/static/js/120aa8f8.js"></script><link rel="stylesheet" href="/static/css/a14e1a22.css"><!-- hexo injector head_end start --><script rel="prefetch" async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script rel="preload" src="https://unpkg.com/blueimp-md5@^2.19.0/js/md5.min.js"></script><script rel="preload" src="https://unpkg.com/lodash@^4.17.21/lodash.min.js"></script><link rel="stylesheet" href="https://fonts.loli.net/css?family=Rubik" /><script rel="preload" src="https://unpkg.com/gitalk@^1.8.0/dist/gitalk.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk@^1.8.0/dist/gitalk.css"/><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" href="/favicon.ico">
+    <script type="module" crossorigin src="/static/js/120aa8f8.js"></script>
+    <link rel="stylesheet" href="/static/css/a14e1a22.css">
+    <!-- 引入 KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js"></script>
+    <!-- 引入 marked.js 和 DOMPurify 库 -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
+<!-- hexo injector head_end start --><script rel="prefetch" async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script rel="preload" src="https://unpkg.com/blueimp-md5@^2.19.0/js/md5.min.js"></script><script rel="preload" src="https://unpkg.com/lodash@^4.17.21/lodash.min.js"></script><link rel="stylesheet" href="https://fonts.loli.net/css?family=Rubik" /><script rel="preload" src="https://unpkg.com/gitalk@^1.8.0/dist/gitalk.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk@^1.8.0/dist/gitalk.css"/><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
 
@@ -111,4 +128,176 @@ mjx-container[display="true"] + br {
   display: none;
 }
 </style><link rel="alternate" href="/atom.xml" title="xmy" type="application/atom+xml">
-</head><body id="body-container"><noscript><strong>We're sorry but this app doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div></body></html>
+</head>
+
+<body id="body-container">
+    <noscript>
+        <strong>We're sorry but this app doesn't work properly without JavaScript enabled.
+            Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+
+    <!-- Aurora 机器人聊天框，固定在页面左下角 -->
+    <div id="aurora-chatbox" style="
+    position: fixed;
+    bottom: 200px;
+    left: 20px;
+    width: 350px;
+    background: linear-gradient(to bottom right, #ffffff, #f1f7ff);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 9999;
+    font-family: Arial, sans-serif;
+    overflow: hidden;">
+    <!-- 标题栏 -->
+    <!-- <div style="
+        background-color: #007bff;
+        color: #ffffff;
+        padding: 10px 15px;
+        font-size: 16px;
+        font-weight: bold;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+        text-align: center;">
+        Aurora 聊天机器人
+    </div> -->
+    <!-- 聊天框主体 -->
+    <div style="
+        padding: 15px;
+        display: flex;
+        flex-direction: column;">
+        <p style="margin: 0; font-size: 14px; color: #333; margin-bottom: 8px;">
+            和我聊天吧🤖
+        </p>
+        <input type="text" id="userInput" placeholder="输入你的问题..."
+            style="
+                width: calc(100% - 10px);
+                padding: 8px;
+                margin: 0 auto;
+                border-radius: 8px;
+                border: 1px solid #ddd;
+                box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+                transition: all 0.3s ease;" />
+        <button id="sendMessage" style="
+                margin-top: 10px;
+                padding: 10px 15px;
+                background-color: #007bff;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-size: 14px;
+                cursor: pointer;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+                transition: background-color 0.3s ease;">
+            发送
+        </button>
+        <div id="responseBox" style="
+                margin-top: 15px;
+                min-height: 50px;
+                font-size: 12px;
+                color: #555;
+                background: #f9f9f9;
+                border-radius: 8px;
+                padding: 8px;
+                box-shadow: inset 0px 1px 3px rgba(0,0,0,0.05);
+                overflow-y: auto;">
+            <!-- 机器人响应展示 -->
+        </div>
+    </div>
+    </div>
+
+
+    <!-- JavaScript 逻辑 -->
+    <script>
+        //开发者平台：https://platform.moonshot.cn/console/api-keys
+        const API_URL = "https://api.moonshot.cn/v1/chat/completions"; // Kimi AI的API地址
+        const API_KEY = "sk-7ZY0XOT24cIgQzar6Sos70L23dCoYkT6SFHAuiCnwVAKkaIK"; // 替换为您的Kimi API密钥
+    
+        async function sendMessage() {
+            const userInput = document.getElementById("userInput").value.trim();
+            const responseBox = document.getElementById("responseBox");
+    
+            if (!userInput) {
+                responseBox.innerText = "请输入你的问题！";
+                return;
+            }
+    
+            responseBox.innerText = "思考中，请耐心等候（需要10秒左右）...";
+    
+            try {
+                // 发起 Kimi AI API 请求
+                const response = await fetch(API_URL, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${API_KEY}`
+                    },
+                    body: JSON.stringify({
+                        model: "moonshot-v1-8k", // Kimi 模型名称
+                        messages: [
+                            { role: "system", content: "你是一个网站的助手，下面我会给你一些这个网站的相关信息。\
+                            \n网站的主人叫虚名羊，网站是用hexo搭建的，网站链接是https://xmy1107.github.io/，\
+                            内容以技术和生活为主。" },
+                            { role: "user", content: userInput }
+                        ]
+                    })
+                });
+    
+                if (!response.ok) {
+                    throw new Error("API 请求失败，请检查网络或密钥。");
+                }
+    
+                const data = await response.json();
+                const kimiResponse = data.choices[0]?.message?.content || "未获取到有效响应内容。";
+                console.log("Kimi Response:", kimiResponse);
+    
+                // 渲染处理与数学公式展示
+                const placeholder = '%%MATH_FORMULA%%';
+                let mathBlocks = [];
+    
+                // 预处理数学公式
+                const preprocessedResponse = kimiResponse.replace(/\\\[.*?\\\]|\\\(.*?\\\)/gs, (match) => {
+                    mathBlocks.push(match);
+                    return placeholder;
+                });
+    
+                // 使用 marked 渲染 Markdown
+                const renderedHTML = marked.parse(preprocessedResponse);
+    
+                // 替换占位符回原始数学公式
+                let finalHTML = renderedHTML;
+                mathBlocks.forEach((math, i) => {
+                    finalHTML = finalHTML.replace(placeholder, math);
+                });
+    
+                // 安全插入 HTML 并渲染数学公式
+                responseBox.innerHTML = DOMPurify.sanitize(finalHTML);
+                renderMathInElement(responseBox, {
+                    delimiters: [
+                        { left: "\\(", right: "\\)", display: false }, // 行内公式
+                        { left: "\\[", right: "\\]", display: true }  // 块级公式
+                    ],
+                    throwOnError: false
+                });
+            } catch (error) {
+                responseBox.innerText = "抱歉，出错了：" + error.message;
+            }
+    
+            // 清空输入框
+            document.getElementById("userInput").value = "";
+        }
+    
+        // 事件监听：发送按钮和回车键
+        document.getElementById("sendMessage").addEventListener("click", sendMessage);
+        document.getElementById("userInput").addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
+    </script>
+    
+</body>
+
+</html>
