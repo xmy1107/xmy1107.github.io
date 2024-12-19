@@ -15,6 +15,18 @@
     <!-- 引入 marked.js 和 DOMPurify 库 -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@2.4.0/dist/purify.min.js"></script>
+    <style>
+        #aurora-chatbox {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        #aurora-chatbox.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 <!-- hexo injector head_end start --><script rel="prefetch" async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script rel="preload" src="https://unpkg.com/blueimp-md5@^2.19.0/js/md5.min.js"></script><script rel="preload" src="https://unpkg.com/lodash@^4.17.21/lodash.min.js"></script><link rel="stylesheet" href="https://fonts.loli.net/css?family=Rubik" /><script rel="preload" src="https://unpkg.com/gitalk@^1.8.0/dist/gitalk.min.js"></script><link rel="stylesheet" href="https://unpkg.com/gitalk@^1.8.0/dist/gitalk.css"/><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
   direction: ltr;
 }
@@ -136,12 +148,28 @@ mjx-container[display="true"] + br {
             Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
+    <button id="showChatbox" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+    聊天
+    </button>
+
 
     <!-- Aurora 机器人聊天框，固定在页面左下角 -->
     <div id="aurora-chatbox" style="
     position: fixed;
     bottom: 200px;
-    left: 20px;
+    right: 20px;
     width: 350px;
     background: linear-gradient(to bottom right, #ffffff, #f1f7ff);
     border: none;
@@ -149,7 +177,8 @@ mjx-container[display="true"] + br {
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
     z-index: 9999;
     font-family: Arial, sans-serif;
-    overflow: hidden;">
+    overflow: hidden;
+    ">
     <!-- 标题栏 -->
     <!-- <div style="
         background-color: #007bff;
@@ -210,6 +239,23 @@ mjx-container[display="true"] + br {
 
     <!-- JavaScript 逻辑 -->
     <script>
+        // document.getElementById("showChatbox").addEventListener("click", function () {
+        //     const chatbox = document.getElementById("aurora-chatbox");
+        //     if (chatbox.style.display === "none" || chatbox.style.display === "") {
+        //         chatbox.style.display = "block"; // 显示聊天框
+        //     } else {
+        //         chatbox.style.display = "none"; // 隐藏聊天框
+        //     }
+        // });
+        document.getElementById("showChatbox").addEventListener("click", function () {
+            const chatbox = document.getElementById("aurora-chatbox");
+            if (!chatbox.classList.contains("active")) {
+                chatbox.classList.add("active"); // 显示聊天框
+            } else {
+                chatbox.classList.remove("active"); // 隐藏聊天框
+            }
+        });
+
         //开发者平台：https://platform.moonshot.cn/console/api-keys
         const API_URL = "https://api.moonshot.cn/v1/chat/completions"; // Kimi AI的API地址
         const API_KEY = "sk-7ZY0XOT24cIgQzar6Sos70L23dCoYkT6SFHAuiCnwVAKkaIK"; // 替换为您的Kimi API密钥
