@@ -151,8 +151,10 @@ mjx-container[display="true"] + br {
     <button id="showChatbox" style="
     position: fixed;
     bottom: 20px;
-    right: 20px;
-    padding: 10px 15px;
+    left: 20px;
+    width: 80px;
+    height: 80px;
+    padding: 0;
     background-color: #007bff;
     color: white;
     border: none;
@@ -160,7 +162,8 @@ mjx-container[display="true"] + br {
     font-size: 16px;
     cursor: pointer;
     z-index: 10000;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    opacity:0;">
     聊天
     </button>
 
@@ -169,7 +172,7 @@ mjx-container[display="true"] + br {
     <div id="aurora-chatbox" style="
     position: fixed;
     bottom: 200px;
-    right: 20px;
+    left: 20px;
     width: 350px;
     background: linear-gradient(to bottom right, #ffffff, #f1f7ff);
     border: none;
