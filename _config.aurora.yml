@@ -12,7 +12,7 @@ site:
   subtitle: xmy's Blog
   author: 蜗角虚名羊
   nick: 
-  description:
+  description: '<p>暂时还没想到要说什么<br>但又不想留白</p>'
   link: '/'
   language: en
   multi_language: true
@@ -61,7 +61,7 @@ menu:
 #! @docs https://aurora.tridiamond.tech/guide/theme.html
 #! ---------------------------------------------------------------
 theme:
-  dark_mode: true
+  dark_mode: false
   profile_shape: circle # support `circle`, `diamond`, `rounded`
   feature: true
   gradient:
@@ -113,12 +113,12 @@ site_meta:
 gitalk:
   enable: true
   autoExpand: true
-  clientID: ''
-  clientSecret: ''
-  repo: '' ## dev-blo-comments
-  owner: '' ## owner name
-  admin: [''] ## ['admin_name']
-  id: uid
+  clientID: 'Ov23li5htnsFMxtQKjqU'
+  clientSecret: 'f73efa1bcb0b25727868ccabf50c344cc8d79f7c'
+  repo: 'blog-comments' ## dev-blo-comments
+  owner: 'xmy1107' ## owner name
+  admin: ['xmy1107'] ## ['admin_name']
+  id: location.pathname
   language: en
   distractionFreeMode: true
   recentComment: true
@@ -167,7 +167,7 @@ waline:
 # Enable Busuanzi statistic plugin
 # see http://ibruce.info/2015/04/04/busuanzi/
 busuanzi:
-  enable: false
+  enable: true
 
 copy_protection:
   enable: true
@@ -180,6 +180,37 @@ copy_protection:
   license:
     cn: 博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议
     en: This content is shared under the CC BY-NC-SA 4.0 protocol (Non-Commercial)
+
+#! ---------------------------------------------------------------
+#! Injections
+#! @docs https://aurora.tridiamond.tech/guide/site-meta.html#custom-meta
+#! ---------------------------------------------------------------
+injects:
+  scripts:
+  css:
+
+#! ---------------------------------------------------------------
+#! Footer links
+#! ---------------------------------------------------------------
+footer_links:
+  - title: # main title
+    links:
+      - title: # link title
+        url: # URL link
+      - title: # link title
+        url: # URL link
+      - title: Friends # link of friends mode / 友链模式
+        mode: 'links'
+
+#! ---------------------------------------------------------------
+#! Highlighter Shiki
+#! ---------------------------------------------------------------
+shiki:
+  enable: false
+  theme: material-theme-palenight
+  externalTheme:
+  backgroundColor: '#1a1a1a'
+
 
 #! ---------------------------------------------------------------
 #! Enable Aurora Bot Dia
@@ -201,7 +232,6 @@ aurora_bot:
   # 目前只支持使用 Dia，将来会支持 live2d。
   # ======================================================
   bot_type: dia
-
   # 这个技巧是用来对用户交互做出反应的
   tips:
     # ======================================================
@@ -393,31 +423,3 @@ aurora_bot:
         text: 今年的<span>双十一</span>是和谁一起过的呢～
       - date: 12/20-12/31
         text: 这几天是<span>圣诞节</span>，主人肯定又去剁手买买买了～
-
-#! ---------------------------------------------------------------
-#! Injections
-#! @docs https://aurora.tridiamond.tech/guide/site-meta.html#custom-meta
-#! ---------------------------------------------------------------
-injects:
-  scripts:
-  css:
-
-#! ---------------------------------------------------------------
-#! Footer links
-#! ---------------------------------------------------------------
-footer_links:
-  - title: # main title
-    links:
-      - title: # link title
-        url: # URL link
-      - title: # link title
-        url: # URL link
-      - title: Friends # link of friends mode / 友链模式
-        mode: 'links'
-
-#! ---------------------------------------------------------------
-#! Highlighter Shiki
-#! ---------------------------------------------------------------
-shiki:
-  enable: true
-  backgroundColor: "#1a1a1a"
