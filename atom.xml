@@ -6,7 +6,7 @@
   <link href="https://xmy1107.github.io/atom.xml" rel="self"/>
   
   <link href="https://xmy1107.github.io/"/>
-  <updated>2025-11-16T12:56:27.000Z</updated>
+  <updated>2025-12-08T16:55:31.000Z</updated>
   <id>https://xmy1107.github.io/</id>
   
   <author>
@@ -17,13 +17,73 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>换电脑后做的事</title>
-    <link href="https://xmy1107.github.io/post/%E6%8D%A2%E7%94%B5%E8%84%91%E5%90%8E%E5%81%9A%E7%9A%84%E4%BA%8B.html"/>
-    <id>https://xmy1107.github.io/post/%E6%8D%A2%E7%94%B5%E8%84%91%E5%90%8E%E5%81%9A%E7%9A%84%E4%BA%8B.html</id>
-    <published>2025-11-16T12:36:13.000Z</published>
-    <updated>2025-11-16T12:56:27.000Z</updated>
+    <title></title>
+    <link href="https://xmy1107.github.io/post/htmls/map.html.html"/>
+    <id>https://xmy1107.github.io/post/htmls/map.html.html</id>
+    <published>2025-12-08T16:55:54.234Z</published>
+    <updated>2025-12-08T16:55:31.000Z</updated>
     
-    <content type="html"><![CDATA[<h1>文件备份</h1><p>对 windows 上所有文件分类并打包到固态硬盘，不常用文件，比如上完的课的资料直接放进去，常用文件留在桌面，将整个桌面拷贝到固态，最后转移到 mac。其中所有内容都在夸克网盘再备份。</p><h2 id="同步规则">同步规则</h2><p>电脑文件/手机中图片视频等：夸克网盘增量同步<br>Obsidian上笔记/Zotero上论文：WebDAV全量同步，服务器为InfiniCLOUD<br>手机备忘录/录音：小米云盘备份<br>notability中笔记：OneDrive -&gt; WebDAV全量同步<br>iCloud 不论 mac 还是 pad 上一律关闭</p><h1>快捷键</h1><p>设置 QQ、微信热键，cmd + shift + 1/2 分别对应两个应用</p><p>Karabiner 交换 command + tab 与 ctrl + tab</p><p>Scroll Reverser 令鼠标单独关闭自然滚动</p><p>Dozer 管理桌面小图标</p><p>ToDesk 竟必须开了后台权限才能登录。ps：ToDesk 很有用，比如 WebDAV 的账号密码，我可以直接打开 Ubuntu 的 Obsidian 然后直接复制到这台电脑。</p><p>cmd+H, cmd+M 调度中心里看不到（H 藏窗口，M 藏应用）</p><p>cmd+W 无窗口，是否在后台或程序坞取决于具体应用</p><p>cmd+Q 应用关闭</p><p>mac 中英文切换发现 bug，改搜狗输入法，顺带还能贴合我其他设备使用逻辑</p><p>键盘设置关闭“使用大写锁定切换ABC输入法”和“连按两下空格输入句号”这些功能，然后 ctrl + space 切换搜狗和ABC，shift 切换中英文，caps lock 切换大小写。</p><h1>日志相关</h1><p>随笔直接飞书记，博客先下 Obsidian，remotely save 插件同步所有博客，仓库名必须是 _posts，否则无法和云上文件夹名字对齐，无法同步。</p><p>顺带记录 Obsidian 撰写博客要点</p><p>首先 <code>hexo new "title"</code> 创建文章，然后直接在 Obsidian 中编辑，属性分类等都可以图形化操作。</p><p>粘贴图片会直接将图片放到 <code>Images</code> 文件夹下，且用相对路径，不管本地还是网页都可以正常查看（这里设置了 <code>_config.yml</code> 的 <code>post_asset_folder</code> 为 <code>false</code>，原本会放到 <code>$(filename)</code> 文件夹下，且原本改标题还要顺带改好多东西，现在不用了）。</p><p>写完需要先点击同步，同步到服务器，然后通过 <code>ToDesk</code> 在 Ubuntu 上也点击同步，之后的 <code>hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</code>通过 <code>ToDesk</code> 还是 ssh 都可以。</p>]]></content>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2025年度总结</title>
+    <link href="https://xmy1107.github.io/post/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93.html"/>
+    <id>https://xmy1107.github.io/post/2025%E5%B9%B4%E5%BA%A6%E6%80%BB%E7%BB%93.html</id>
+    <published>2025-12-08T16:41:00.000Z</published>
+    <updated>2026-01-21T14:02:38.701Z</updated>
+    
+    <content type="html"><![CDATA[<p>几乎是完全做到了24年末总结里说的”给我好好去玩“，但相应的，可以写下来的那些”收获“就少一些了。</p><h1>保研</h1><p>三作的论文辗转 CAD/Graphics、PRCV、CVM，说是全被拒，那我是真不想继续帮打工了，搞了半天的东西没在保研上给我一点点的优势，联系的老师即便对我评价好，但不招人又有啥用呢。。。浙大是我最错付的地方了。。。</p><p>邮件从三月到九月发了 20 + 19 + 21 + 15 + 14 + 65 = 154 封，可能有人好奇为啥七个月只有六个数字，因为八月没发，夏令营全没进摆烂了，甜蜜蜜了一个月。</p><p>下面是最终结果。</p><p>夏令营就进了浙软，剩下的全没进：<br>软微、国科大、贵系、北大智能、华东师大、上交计算机、哈工深、中科大、南大计算机、南软、复旦大数据<br>自以为浙软那不到一周时间里做的东西蛮有竞争力的，是对闭源模型的复现，听完其他人的报告真觉得自己做得挺好。跟十几进一还有我的双非背景都有关系吧，是场注定打不赢的仗。<a href="https://github.com/xmy1107/alphageometry">alphageometry</a></p><p>预推免就进了华东师大计院、北航国新院、北航软院，后两者冲突了，就把北航软院丢了。<br>未入：清华仨院、浙软、复旦工程硕博、南大智能、南大软院、南大计院、哈工深电子信息 计算机技术、哈工深智能学部 电子信息 人工智能、东南、南开卓越工程师、同济、北航计院、软微、北深、中科大工程硕博、上交人工智能、复旦智能机器人<br>最后拿了华师大和北航俩offer，去了国新院。虽有不甘，但只能认命，并在之后的日子也是找到了新的意义——在压力小的地方我可以自由拓展我那恣意生长的兴趣爱好。</p><h1>教培</h1><p>1月2月寒假在家，顺带教下 USACO 铜升银</p><p>2024.12 ~ 2025.3  发现一个小商机，断断续续挣了点</p><p>7.27 ~ 8.12  苏州新东方 CSP-J</p><p>国庆 &amp; CSP前，扬州新东方</p><p>算钱的话，加上minmax实习，和省政府奖学金（对，国奖也没评上，今年纯小丑）到手10个不到，而且换新设备、恋爱支出、日本旅游等，也没攒下多少钱</p><h1>情感</h1><p>谈了一段十分真挚的恋爱，但似乎没法坚持到农历新年了</p><p>具体的恋爱经历都在自己的小本本里记着，这倒也不方便公之于众了</p><h1>零碎</h1><p>此外还有一些诸如省赛金、手术、日本旅游等比较大但又没有合适分类的事情，就在这带过了。</p><p>今年的收获可能大多难以通过文字表达，保研、教培、实习、恋爱本身可量化的收获其实并不多，更多的是我做了这些事后的体会和成长，私以为今年的收获不逊于去年。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;几乎是完全做到了24年末总结里说的”给我好好去玩“，但相应的，可以写下来的那些”收获“就少一些了。&lt;/p&gt;
+&lt;h1&gt;保研&lt;/h1&gt;
+&lt;p&gt;三作的论文辗转 CAD/Graphics、PRCV、CVM，说是全被拒，那我是真不想继续帮打工了，搞了半天的东西没在保研上给我一点点的优</summary>
+      
+    
+    
+    
+    
+    <category term="杂" scheme="https://xmy1107.github.io/tags/%E6%9D%82/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>洛谷网页 html bug</title>
+    <link href="https://xmy1107.github.io/post/%E6%B4%9B%E8%B0%B7%E7%BD%91%E9%A1%B5%20html%20bug.html"/>
+    <id>https://xmy1107.github.io/post/%E6%B4%9B%E8%B0%B7%E7%BD%91%E9%A1%B5%20html%20bug.html</id>
+    <published>2025-11-30T16:37:13.000Z</published>
+    <updated>2025-12-08T16:39:49.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>在包含代码的网页中检视，选中 Element 中的代码对应元素，可以发现其 Style 为 <code>font-family: var(--lfe-code-font, monospace) !important;</code></p><p><img src="Images/Pasted%20image%2020251201004548.png" alt=""></p><p>而 <code>monospace</code> 为字面量，并非变量，不应该在 var 中，这样前者的值 “Consolas” 在 Mac 上没安装（Win 可以），后者因语法错误无法被识别，只能显示 <code>PingFang SC</code> 字体<br><img src="Images/Pasted%20image%2020251201004655.png" alt=""></p><p>正确语法是 <code>var(--lfe-code-font), monospace</code>，这样才能在 Consolas 没有安装时回退到 monospace，正确显示等宽字体<br><img src="Images/Pasted%20image%2020251201004901.png" alt=""></p><p>解决方法：安装浏览器插件 <code>Stylus</code>，添加规则代码，作用为修改 <code>--lfe-code-font</code> 变量值，这样可以直接显示 <code>Menlo</code> 字体</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body {</span><br><span class="line">    --lfe-code-font: "Menlo", "Monaco" !important;</span><br><span class="line">}</span><br></pre></td></tr></table></figure><p>在验证本地的确没有安装 Consolas 时发现，回退会模拟原始字体的某些视觉特征。测试中 <code>font-family: Consolas, monospace;</code> 虽然显示的字体是 monospace 中的 Menlo，但大小和 <code>font-family: monospace;</code> 并不同：<br><img src="Images/Pasted%20image%2020251201005154.png" alt=""></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;在包含代码的网页中检视，选中 Element 中的代码对应元素，可以发现其 Style 为 &lt;code&gt;font-family: var(--lfe-code-font, monospace) !important;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;Imag</summary>
+      
+    
+    
+    
+    
+    <category term="杂" scheme="https://xmy1107.github.io/tags/%E6%9D%82/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记录新电脑配置</title>
+    <link href="https://xmy1107.github.io/post/%E8%AE%B0%E5%BD%95%E6%96%B0%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE.html"/>
+    <id>https://xmy1107.github.io/post/%E8%AE%B0%E5%BD%95%E6%96%B0%E7%94%B5%E8%84%91%E9%85%8D%E7%BD%AE.html</id>
+    <published>2025-11-16T12:36:13.000Z</published>
+    <updated>2026-01-07T14:43:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1>文件备份</h1><p>对 windows 上所有文件分类并打包到固态硬盘，不常用文件，比如上完的课的资料直接放进去，常用文件留在桌面，将整个桌面拷贝到固态，最后转移到 mac。其中所有内容都在夸克网盘再备份。</p><h2 id="同步规则">同步规则</h2><p>电脑文件/手机中图片视频等：夸克网盘增量同步</p><p>Obsidian上笔记/Zotero上论文：WebDAV全量同步，服务器为InfiniCLOUD</p><p>手机备忘录/录音：小米云盘备份</p><p>notability中笔记：OneDrive -&gt; WebDAV全量同步</p><p>iCloud 不论 mac 还是 pad 上一律关闭</p><h1>快捷键</h1><p>设置 QQ、微信、飞书热键，cmd + shift + 1/2/W 分别对应三个应用</p><p>Karabiner 交换 command + tab 与 ctrl + tab</p><p>Scroll Reverser 令鼠标单独关闭自然滚动</p><p>Dozer 管理桌面小图标</p><p>超级右键 创建文本文件、进入终端（这几个操作竟也要我安装个 app！）</p><p>安装 maccy 代替 windows 剪切板功能</p><p>ToDesk 竟必须开了后台权限才能登录。ps：ToDesk 很有用，比如 WebDAV 的账号密码，我可以直接打开 Ubuntu 的 Obsidian 然后直接复制到这台电脑。</p><p>cmd+H, cmd+M 调度中心里看不到（H 藏窗口，M 藏应用）</p><p>cmd+W 无窗口，是否在后台或程序坞取决于具体应用</p><p>cmd+Q 应用关闭</p><p>fn 关闭状态，因为 Windows 上常用的 F2、F5 本身也无法生效</p><p>mac 中英文切换发现 bug，改搜狗输入法，顺带还能贴合我其他设备使用逻辑</p><p>键盘设置关闭“使用大写锁定切换ABC输入法”和“连按两下空格输入句号”这些功能，然后 ctrl + space 切换搜狗和ABC，shift 切换中英文，caps lock 切换大小写。</p><p>洛谷网页的 html 有 bug，加上 macOS 上没 Consolas，需安装插件 Stylus，添加规则代码（应用范围可以选择全部网页）：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body {</span><br><span class="line">    --lfe-code-font: "Menlo", "Monaco" !important;</span><br><span class="line">}</span><br></pre></td></tr></table></figure><h1>日志相关</h1><p>随笔直接飞书记，博客先下 Obsidian，remotely save 插件同步所有博客，仓库名必须是 _posts，否则无法和云上文件夹名字对齐，无法同步。</p><p>顺带记录 Obsidian 撰写博客要点</p><p>首先 <code>hexo new "title"</code> 创建文章，然后直接在 Obsidian 中编辑，属性分类等都可以图形化操作。</p><p>粘贴图片会直接将图片放到 <code>Images</code> 文件夹下，且用相对路径，不管本地还是网页都可以正常查看（这里设置了 <code>_config.yml</code> 的 <code>post_asset_folder</code> 为 <code>false</code>，原本会放到 <code>$(filename)</code> 文件夹下，且原本改标题还要顺带改好多东西，现在不用了）。</p><p>写完需要先点击同步，同步到服务器，然后通过 <code>ToDesk</code> 在 Ubuntu 上也点击同步，之后的 <code>hexo cl &amp;&amp; hexo g &amp;&amp; hexo s</code>通过 <code>ToDesk</code> 还是 ssh 都可以。</p><h1>一些配置</h1><h2 id="cursor">cursor</h2><p>code-runner.runInTerminal 打开，不然在输出视图是没法输入内容的</p><p>inlay hints 工程代码打开，竞赛代码关闭，或者也可以默认隐藏，ctrl + option 显示</p><p>Preferences: Open User Settings (JSON) 中加入如下代码，这样文件名出现空格等符号均可以运行：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"code-runner.executorMap": {</span><br><span class="line">    "cpp": "cd \"$dir\" &amp;&amp; g++ \"$fileName\" -o \"$fileNameWithoutExt\" &amp;&amp; \"$dir/$fileNameWithoutExt\"" </span><br><span class="line">}</span><br></pre></td></tr></table></figure><p>同样的地方，可以加入如下代码，避免打一个 tab 变成四个空格</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">"editor.insertSpaces": false,</span><br><span class="line">"editor.tabSize": 4,</span><br><span class="line">"editor.detectIndentation": false</span><br></pre></td></tr></table></figure><p>自动补全提示关闭：</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">"editor.quickSuggestions": {</span><br><span class="line">"other": false,</span><br><span class="line">"comments": false,</span><br><span class="line">"strings": false</span><br><span class="line">},</span><br><span class="line">"editor.suggestOnTriggerCharacters": false</span><br></pre></td></tr></table></figure>]]></content>
     
     
       
